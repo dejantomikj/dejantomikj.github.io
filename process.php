@@ -9,7 +9,6 @@
     $fields = array();
     $fields{"name"} = "name";
     $fields{"email"} = "email";
-    $fields{"phone"} = "phone";
     $fields{"message"} = "message";
 
     
