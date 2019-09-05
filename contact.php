@@ -14,9 +14,7 @@ require('constant.php');
 	if(empty($user_email)) {
 		$empty[] = "<b>Email</b>";
 	}
-	if(empty($user_phone)) {
-		$empty[] = "<b>Phone Number</b>";
-	}	
+
 	if(empty($content)) {
 		$empty[] = "<b>Comments</b>";
 	}
@@ -46,7 +44,7 @@ require('constant.php');
 		  }	
 	}
 	
-	$toEmail = "member@testdomain.com";
+	$toEmail = "dejantomikj@gmail.com";
 	$mailHeaders = "From: " . $user_name . "<" . $user_email . ">\r\n";
 	$mailBody = "User Name: " . $user_name . "\n";
 	$mailBody .= "User Email: " . $user_email . "\n";
