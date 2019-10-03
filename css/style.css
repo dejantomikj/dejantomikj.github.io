@@ -811,8 +811,8 @@ fieldset {
 
 @media (max-width: 420px) {
     nav li {
-        margin: 6px;
-        line-height: 11px;
+        
+        line-height: 5px;
     }
     nav li a {
         font-size: 10px;
