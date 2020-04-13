@@ -1,0 +1,1952 @@
+*PPD-Adobe: "4.3"
+*% Copyright 2018 MV-Informatique. All rights reserved.
+*% CQue version: 4.0-1.
+*% Foomatic target: PCL5.
+*% Canon PostScript(R) Printer Description File
+*% Copyright CANON INC. 2015
+*% Permission is granted for redistribution of this file as
+*% long as this copyright notice is intact and the contents
+*% of the file is not altered in any way from its original form.
+*% End of Copyright statement for Canon iR-ADV C5535/5540.
+*% Copyright CANON INC. 2015
+*%
+*FormatVersion: "4.3"
+*FileVersion: "1.0"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*Manufacturer: "Canon"
+*PCFileName: "CEIRADVC.PPD"
+*Product: "(ir-adv c5535/5540 ppd)"
+*PSVersion: "(3017.104)1"
+*ModelName: "Canon iR-ADV C5535/5540 PCL"
+*ShortNickName: "Canon iR-ADV C5535/5540 PCL"
+*NickName: "Canon iR-ADV C5535/5540 PCL"
+*%
+*cupsVersion:      1.1
+*cupsManualCopies: True
+*cupsModelNumber:  2
+*cupsFilter:       "application/vnd.cups-postscript 100 foomatic-rip"
+*cupsFilter:       "application/vnd.cups-pdf 0 foomatic-rip"
+*cupsFilter:       "application/vnd.apple-pdf 25 foomatic-rip"
+*%
+*OpenGroup: InstallableOptions/Attached Options
+*%
+*OpenUI *OptSPD/Paper Deck Unit: Boolean
+*DefaultOptSPD: False
+*OptSPD False/Off: ""
+*OptSPD True/On: ""
+*CloseUI: *OptSPD
+*%
+*OpenUI *OptPaperSrc/Paper Source Options: PickOne
+*DefaultOptPaperSrc: None
+*OptPaperSrc None/Off: ""
+*OptPaperSrc AddCT3/Cassette Feeding Unit AM1: ""
+*OptPaperSrc AddCT4/High Capacity Cassette Feeding Unit A1: ""
+*CloseUI: *OptPaperSrc
+*%
+*OpenUI *OptFIN/Output Options: PickOne
+*DefaultOptFIN: None
+*OptFIN None/Off: ""
+*OptFIN IN2TRAY/Inner 2way Tray: ""
+*OptFIN InFinH1/Inner Finisher H1: ""
+*OptFIN StplFinY1/Staple Finisher Y1: ""
+*OptFIN BkltFinY1/Booklet Finisher Y1: ""
+*CloseUI: *OptFIN
+*%
+*OpenUI *OptCTRY/Copy Tray: Boolean
+*DefaultOptCTRY: False
+*OptCTRY False/Off: ""
+*OptCTRY True/On: ""
+*CloseUI: *OptCTRY
+*%
+*OpenUI *OptPCU/Puncher: Boolean
+*DefaultOptPCU: False
+*OptPCU False/Off: ""
+*OptPCU True/On: ""
+*CloseUI: *OptPCU
+*%
+*OpenUI *OptSecure/Secure Printing Function of Device: Boolean
+*DefaultOptSecure: False
+*OptSecure False/Off: ""
+*OptSecure True/On: ""
+*CloseUI: *OptSecure
+*%
+*CloseGroup: InstallableOptions
+*%
+*%========== Ghostscript Command line ==========
+*%
+*FoomaticIDs: Canon pxlmono
+*FoomaticRIPCommandLine: "gs -q -dBATCH %F -dPARANOIDSAFER -dNOPAUSE %B%A%C -dPDFFitPage  -sOutputFile=- - %D%E | sicgsfilter -MPCL -NP %G%H%I -u&user; -V&quot;&title;&quot; -n&copies; "
+*%
+*UIConstraints: *InputSlot SPD *OptSPD False
+*UIConstraints: *OptSPD False *InputSlot SPD
+*%
+*UIConstraints: *InputSlot Tray3 *OptPaperSrc None
+*UIConstraints: *OptPaperSrc None *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *OptPaperSrc None
+*UIConstraints: *OptPaperSrc None *InputSlot Tray4
+*UIConstraints: *InputSlot Tray4 *OptPaperSrc AddCT4
+*UIConstraints: *OptPaperSrc AddCT4 *InputSlot Tray4
+*%
+*UIConstraints: *Finishing OffCol *OptFIN None
+*UIConstraints: *OptFIN None *Finishing OffCol
+*UIConstraints: *Finishing OffGr *OptFIN None
+*UIConstraints: *OptFIN None *Finishing OffGr
+*UIConstraints: *Finishing OffCol *OptFIN IN2TRAY
+*UIConstraints: *OptFIN IN2TRAY *Finishing OffCol
+*UIConstraints: *Finishing OffGr *OptFIN IN2TRAY
+*UIConstraints: *OptFIN IN2TRAY *Finishing OffGr
+*UIConstraints: *Finishing RotCol *OptFIN InFinH1
+*UIConstraints: *OptFIN InFinH1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *OptFIN InFinH1
+*UIConstraints: *OptFIN InFinH1 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *OptFIN StplFinY1
+*UIConstraints: *OptFIN StplFinY1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *OptFIN StplFinY1
+*UIConstraints: *OptFIN StplFinY1 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *OptFIN BkltFinY1
+*UIConstraints: *OptFIN BkltFinY1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *OptFIN BkltFinY1
+*UIConstraints: *OptFIN BkltFinY1 *Finishing RotGr
+*%
+*UIConstraints: *OptPCU True *OptFIN None
+*UIConstraints: *OptFIN None *OptPCU True
+*UIConstraints: *OptPCU True *OptFIN IN2TRAY
+*UIConstraints: *OptFIN IN2TRAY *OptPCU True
+*%
+*%
+*UIConstraints: *Punch InAnyPL *OptPCU False
+*UIConstraints: *OptPCU False *Punch InAnyPL
+*UIConstraints: *Punch InAnyPR *OptPCU False
+*UIConstraints: *OptPCU False *Punch InAnyPR
+*UIConstraints: *Punch InAnyPU *OptPCU False
+*UIConstraints: *OptPCU False *Punch InAnyPU
+*UIConstraints: *Punch InAnyPB *OptPCU False
+*UIConstraints: *OptPCU False *Punch InAnyPB
+*%
+*UIConstraints: *Finishing RotCol *InputSlot MPT
+*UIConstraints: *InputSlot MPT *Finishing RotCol
+*UIConstraints: *Finishing RotGr *InputSlot MPT
+*UIConstraints: *InputSlot MPT *Finishing RotGr
+*UIConstraints: *Finishing RotCol *InputSlot Tray1
+*UIConstraints: *InputSlot Tray1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *InputSlot Tray1
+*UIConstraints: *InputSlot Tray1 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *InputSlot Tray2
+*UIConstraints: *InputSlot Tray2 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *InputSlot Tray2
+*UIConstraints: *InputSlot Tray2 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *InputSlot Tray3
+*UIConstraints: *InputSlot Tray3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *InputSlot Tray3
+*UIConstraints: *InputSlot Tray3 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *InputSlot Tray4
+*UIConstraints: *InputSlot Tray4 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *InputSlot Tray4
+*UIConstraints: *InputSlot Tray4 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *InputSlot SPD
+*UIConstraints: *InputSlot SPD *Finishing RotCol
+*UIConstraints: *Finishing RotGr *InputSlot SPD
+*UIConstraints: *InputSlot SPD *Finishing RotGr
+*%
+*UIConstraints: *InputSlot Tray1 *PageSize Legal
+*UIConstraints: *PageSize Legal *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageSize Legal
+*UIConstraints: *PageSize Legal *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *InputSlot SPD
+*UIConstraints: *InputSlot SPD *PageSize Executive
+*UIConstraints: *PageSize Executive *InputSlot SPD
+*UIConstraints: *InputSlot SPD *PageSize Statement
+*UIConstraints: *PageSize Statement *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize A3
+*UIConstraints: *PageSize A3 *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageSize A3
+*UIConstraints: *PageSize A3 *InputSlot SPD
+*UIConstraints: *InputSlot SPD *PageSize A5
+*UIConstraints: *PageSize A5 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize B4
+*UIConstraints: *PageSize B4 *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageSize B4
+*UIConstraints: *PageSize B4 *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageSize Monarch
+*UIConstraints: *PageSize Monarch *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageSize Monarch
+*UIConstraints: *PageSize Monarch *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageSize Monarch
+*UIConstraints: *PageSize Monarch *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageSize Com10
+*UIConstraints: *PageSize Com10 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageSize Com10
+*UIConstraints: *PageSize Com10 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageSize Com10
+*UIConstraints: *PageSize Com10 *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageSize DL
+*UIConstraints: *PageSize DL *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageSize DL
+*UIConstraints: *PageSize DL *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageSize DL
+*UIConstraints: *PageSize DL *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageSize C5
+*UIConstraints: *PageSize C5 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageSize C5
+*UIConstraints: *PageSize C5 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageSize C5
+*UIConstraints: *PageSize C5 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion Legal
+*UIConstraints: *PageRegion Legal *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageRegion Legal
+*UIConstraints: *PageRegion Legal *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *InputSlot SPD
+*UIConstraints: *InputSlot SPD *PageRegion Executive
+*UIConstraints: *PageRegion Executive *InputSlot SPD
+*UIConstraints: *InputSlot SPD *PageRegion Statement
+*UIConstraints: *PageRegion Statement *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion A3
+*UIConstraints: *PageRegion A3 *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageRegion A3
+*UIConstraints: *PageRegion A3 *InputSlot SPD
+*UIConstraints: *InputSlot SPD *PageRegion A5
+*UIConstraints: *PageRegion A5 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion B4
+*UIConstraints: *PageRegion B4 *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageRegion B4
+*UIConstraints: *PageRegion B4 *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageRegion DL
+*UIConstraints: *PageRegion DL *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageRegion DL
+*UIConstraints: *PageRegion DL *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageRegion DL
+*UIConstraints: *PageRegion DL *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *PageRegion C5
+*UIConstraints: *PageRegion C5 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageRegion C5
+*UIConstraints: *PageRegion C5 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageRegion C5
+*UIConstraints: *PageRegion C5 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *InputSlot Tray1
+*UIConstraints: *InputSlot SPD *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *InputSlot SPD
+*%
+*UIConstraints: *Duplex DuplexTumble *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageSize Com10
+*UIConstraints: *PageSize Com10 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageSize Com10
+*UIConstraints: *PageSize Com10 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageSize DL
+*UIConstraints: *PageSize DL *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageSize DL
+*UIConstraints: *PageSize DL *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageSize C5
+*UIConstraints: *PageSize C5 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageSize C5
+*UIConstraints: *PageSize C5 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageRegion DL
+*UIConstraints: *PageRegion DL *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageRegion DL
+*UIConstraints: *PageRegion DL *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageRegion C5
+*UIConstraints: *PageRegion C5 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageRegion C5
+*UIConstraints: *PageRegion C5 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Duplex DuplexNoTumble
+*%
+*UIConstraints: *Finishing RotCol *PageSize Legal
+*UIConstraints: *PageSize Legal *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize Legal
+*UIConstraints: *PageSize Legal *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageSize Executive
+*UIConstraints: *PageSize Executive *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize Executive
+*UIConstraints: *PageSize Executive *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageSize Statement
+*UIConstraints: *PageSize Statement *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize Statement
+*UIConstraints: *PageSize Statement *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize Statement
+*UIConstraints: *PageSize Statement *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize Statement
+*UIConstraints: *PageSize Statement *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize A3
+*UIConstraints: *PageSize A3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize A3
+*UIConstraints: *PageSize A3 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageSize A5
+*UIConstraints: *PageSize A5 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize A5
+*UIConstraints: *PageSize A5 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize A5
+*UIConstraints: *PageSize A5 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize A5
+*UIConstraints: *PageSize A5 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize B4
+*UIConstraints: *PageSize B4 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize B4
+*UIConstraints: *PageSize B4 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize Com10
+*UIConstraints: *PageSize Com10 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize Com10
+*UIConstraints: *PageSize Com10 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize Com10
+*UIConstraints: *PageSize Com10 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize Com10
+*UIConstraints: *PageSize Com10 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize DL
+*UIConstraints: *PageSize DL *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize DL
+*UIConstraints: *PageSize DL *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize DL
+*UIConstraints: *PageSize DL *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize DL
+*UIConstraints: *PageSize DL *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize C5
+*UIConstraints: *PageSize C5 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize C5
+*UIConstraints: *PageSize C5 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize C5
+*UIConstraints: *PageSize C5 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize C5
+*UIConstraints: *PageSize C5 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion Legal
+*UIConstraints: *PageRegion Legal *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion Legal
+*UIConstraints: *PageRegion Legal *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageRegion Executive
+*UIConstraints: *PageRegion Executive *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion Executive
+*UIConstraints: *PageRegion Executive *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageRegion Statement
+*UIConstraints: *PageRegion Statement *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion Statement
+*UIConstraints: *PageRegion Statement *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion Statement
+*UIConstraints: *PageRegion Statement *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion Statement
+*UIConstraints: *PageRegion Statement *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion A3
+*UIConstraints: *PageRegion A3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion A3
+*UIConstraints: *PageRegion A3 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageRegion A5
+*UIConstraints: *PageRegion A5 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion A5
+*UIConstraints: *PageRegion A5 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion A5
+*UIConstraints: *PageRegion A5 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion A5
+*UIConstraints: *PageRegion A5 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion B4
+*UIConstraints: *PageRegion B4 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion B4
+*UIConstraints: *PageRegion B4 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion DL
+*UIConstraints: *PageRegion DL *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion DL
+*UIConstraints: *PageRegion DL *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion DL
+*UIConstraints: *PageRegion DL *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion DL
+*UIConstraints: *PageRegion DL *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion C5
+*UIConstraints: *PageRegion C5 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion C5
+*UIConstraints: *PageRegion C5 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion C5
+*UIConstraints: *PageRegion C5 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion C5
+*UIConstraints: *PageRegion C5 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Finishing RotCol
+*UIConstraints: *Finishing RotGr *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Finishing RotGr
+*UIConstraints: *Finishing OffCol *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Finishing OffCol
+*UIConstraints: *Finishing OffGr *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Finishing OffGr
+*%
+*UIConstraints: *Interleave White *PageSize Legal
+*UIConstraints: *PageSize Legal *Interleave White
+*UIConstraints: *Interleave Printed *PageSize Legal
+*UIConstraints: *PageSize Legal *Interleave Printed
+*UIConstraints: *Interleave White *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *Interleave White
+*UIConstraints: *Interleave Printed *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *Interleave Printed
+*UIConstraints: *Interleave White *PageSize Executive
+*UIConstraints: *PageSize Executive *Interleave White
+*UIConstraints: *Interleave Printed *PageSize Executive
+*UIConstraints: *PageSize Executive *Interleave Printed
+*UIConstraints: *Interleave White *PageSize Statement
+*UIConstraints: *PageSize Statement *Interleave White
+*UIConstraints: *Interleave Printed *PageSize Statement
+*UIConstraints: *PageSize Statement *Interleave Printed
+*UIConstraints: *Interleave White *PageSize A3
+*UIConstraints: *PageSize A3 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize A3
+*UIConstraints: *PageSize A3 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize A5
+*UIConstraints: *PageSize A5 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize A5
+*UIConstraints: *PageSize A5 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize B5
+*UIConstraints: *PageSize B5 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize B5
+*UIConstraints: *PageSize B5 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize B4
+*UIConstraints: *PageSize B4 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize B4
+*UIConstraints: *PageSize B4 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Interleave White
+*UIConstraints: *Interleave Printed *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Interleave Printed
+*UIConstraints: *Interleave White *PageSize Com10
+*UIConstraints: *PageSize Com10 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize Com10
+*UIConstraints: *PageSize Com10 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize DL
+*UIConstraints: *PageSize DL *Interleave White
+*UIConstraints: *Interleave Printed *PageSize DL
+*UIConstraints: *PageSize DL *Interleave Printed
+*UIConstraints: *Interleave White *PageSize C5
+*UIConstraints: *PageSize C5 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize C5
+*UIConstraints: *PageSize C5 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Interleave White
+*UIConstraints: *Interleave Printed *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Interleave Printed
+*UIConstraints: *Interleave White *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Interleave White
+*UIConstraints: *Interleave Printed *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Interleave Printed
+*UIConstraints: *Interleave White *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Interleave White
+*UIConstraints: *Interleave Printed *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion Legal
+*UIConstraints: *PageRegion Legal *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion Legal
+*UIConstraints: *PageRegion Legal *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion Executive
+*UIConstraints: *PageRegion Executive *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion Executive
+*UIConstraints: *PageRegion Executive *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion Statement
+*UIConstraints: *PageRegion Statement *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion Statement
+*UIConstraints: *PageRegion Statement *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion A3
+*UIConstraints: *PageRegion A3 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion A3
+*UIConstraints: *PageRegion A3 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion A5
+*UIConstraints: *PageRegion A5 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion A5
+*UIConstraints: *PageRegion A5 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion B5
+*UIConstraints: *PageRegion B5 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion B5
+*UIConstraints: *PageRegion B5 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion B4
+*UIConstraints: *PageRegion B4 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion B4
+*UIConstraints: *PageRegion B4 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion DL
+*UIConstraints: *PageRegion DL *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion DL
+*UIConstraints: *PageRegion DL *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion C5
+*UIConstraints: *PageRegion C5 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion C5
+*UIConstraints: *PageRegion C5 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Interleave Printed
+*UIConstraints: *Interleave White *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Interleave White
+*UIConstraints: *Interleave Printed *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Interleave Printed
+*%
+*UIConstraints: *Booklet Left *PageSize Legal
+*UIConstraints: *PageSize Legal *Booklet Left
+*UIConstraints: *Booklet Left *PageSize Tabloid
+*UIConstraints: *PageSize Tabloid *Booklet Left
+*UIConstraints: *Booklet Left *PageSize Executive
+*UIConstraints: *PageSize Executive *Booklet Left
+*UIConstraints: *Booklet Left *PageSize A3
+*UIConstraints: *PageSize A3 *Booklet Left
+*UIConstraints: *Booklet Left *PageSize B4
+*UIConstraints: *PageSize B4 *Booklet Left
+*UIConstraints: *Booklet Left *PageSize Monarch
+*UIConstraints: *PageSize Monarch *Booklet Left
+*UIConstraints: *Booklet Left *PageSize Com10
+*UIConstraints: *PageSize Com10 *Booklet Left
+*UIConstraints: *Booklet Left *PageSize DL
+*UIConstraints: *PageSize DL *Booklet Left
+*UIConstraints: *Booklet Left *PageSize C5
+*UIConstraints: *PageSize C5 *Booklet Left
+*UIConstraints: *Booklet Left *PageSize SRA3
+*UIConstraints: *PageSize SRA3 *Booklet Left
+*UIConstraints: *Booklet Left *PageSize SRA3_MAX
+*UIConstraints: *PageSize SRA3_MAX *Booklet Left
+*UIConstraints: *Booklet Left *PageSize 12x18
+*UIConstraints: *PageSize 12x18 *Booklet Left
+*UIConstraints: *Booklet Left *PageSize 12x18_MAX
+*UIConstraints: *PageSize 12x18_MAX *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion Legal
+*UIConstraints: *PageRegion Legal *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion Tabloid
+*UIConstraints: *PageRegion Tabloid *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion Executive
+*UIConstraints: *PageRegion Executive *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion A3
+*UIConstraints: *PageRegion A3 *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion B4
+*UIConstraints: *PageRegion B4 *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion Monarch
+*UIConstraints: *PageRegion Monarch *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion Com10
+*UIConstraints: *PageRegion Com10 *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion DL
+*UIConstraints: *PageRegion DL *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion C5
+*UIConstraints: *PageRegion C5 *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion SRA3
+*UIConstraints: *PageRegion SRA3 *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion SRA3_MAX
+*UIConstraints: *PageRegion SRA3_MAX *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion 12x18
+*UIConstraints: *PageRegion 12x18 *Booklet Left
+*UIConstraints: *Booklet Left *PageRegion 12x18_MAX
+*UIConstraints: *PageRegion 12x18_MAX *Booklet Left
+*%
+*%
+*UIConstraints: *InputSlot Tray1 *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *InputSlot SPD
+*UIConstraints: *InputSlot SPD *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *InputSlot SPD
+*UIConstraints: *InputSlot SPD *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType LABELS
+*UIConstraints: *MediaType LABELS *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType LABELS
+*UIConstraints: *MediaType LABELS *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType LABELS
+*UIConstraints: *MediaType LABELS *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType LABELS
+*UIConstraints: *MediaType LABELS *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType LABELS
+*UIConstraints: *MediaType LABELS *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType TRACING
+*UIConstraints: *MediaType TRACING *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType TRACING
+*UIConstraints: *MediaType TRACING *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType TRACING
+*UIConstraints: *MediaType TRACING *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType TRACING
+*UIConstraints: *MediaType TRACING *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType TRACING
+*UIConstraints: *MediaType TRACING *InputSlot SPD
+*UIConstraints: *InputSlot Tray3 *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType INDEX
+*UIConstraints: *MediaType INDEX *InputSlot Tray1
+*UIConstraints: *InputSlot Tray3 *MediaType INDEX
+*UIConstraints: *MediaType INDEX *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType INDEX
+*UIConstraints: *MediaType INDEX *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType INDEX
+*UIConstraints: *MediaType INDEX *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray3 *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray3 *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray3 *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *InputSlot SPD
+*UIConstraints: *InputSlot Tray1 *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *InputSlot Tray1
+*UIConstraints: *InputSlot Tray2 *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *InputSlot Tray2
+*UIConstraints: *InputSlot Tray3 *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *InputSlot Tray3
+*UIConstraints: *InputSlot Tray4 *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *InputSlot Tray4
+*UIConstraints: *InputSlot SPD *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *InputSlot SPD
+*%
+*UIConstraints: *Duplex DuplexTumble *MediaType EXHEAVY4
+*UIConstraints: *MediaType EXHEAVY4 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType EXHEAVY4
+*UIConstraints: *MediaType EXHEAVY4 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *Duplex DuplexNoTumble
+*%
+*UIConstraints: *Finishing RotCol *MediaType PREPUNCHED1
+*UIConstraints: *MediaType PREPUNCHED1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType PREPUNCHED1
+*UIConstraints: *MediaType PREPUNCHED1 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType BOND
+*UIConstraints: *MediaType BOND *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType BOND
+*UIConstraints: *MediaType BOND *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Finishing RotGr
+*UIConstraints: *Finishing OffCol *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Finishing OffCol
+*UIConstraints: *Finishing OffGr *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Finishing OffGr
+*UIConstraints: *Finishing RotCol *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *Finishing RotGr
+*UIConstraints: *Finishing RotCol *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *Finishing RotCol
+*UIConstraints: *Finishing RotGr *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *Finishing RotGr
+*%
+*UIConstraints: *Interleave White *MediaType PLAIN
+*UIConstraints: *MediaType PLAIN *Interleave White
+*UIConstraints: *Interleave Printed *MediaType PLAIN
+*UIConstraints: *MediaType PLAIN *Interleave Printed
+*UIConstraints: *Interleave White *MediaType PLAIN2
+*UIConstraints: *MediaType PLAIN2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType PLAIN2
+*UIConstraints: *MediaType PLAIN2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType PLAIN3
+*UIConstraints: *MediaType PLAIN3 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType PLAIN3
+*UIConstraints: *MediaType PLAIN3 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType RECYCLED1
+*UIConstraints: *MediaType RECYCLED1 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType RECYCLED1
+*UIConstraints: *MediaType RECYCLED1 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType RECYCLED2
+*UIConstraints: *MediaType RECYCLED2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType RECYCLED2
+*UIConstraints: *MediaType RECYCLED2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType RECYCLED5
+*UIConstraints: *MediaType RECYCLED5 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType RECYCLED5
+*UIConstraints: *MediaType RECYCLED5 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType COLOR
+*UIConstraints: *MediaType COLOR *Interleave White
+*UIConstraints: *Interleave Printed *MediaType COLOR
+*UIConstraints: *MediaType COLOR *Interleave Printed
+*UIConstraints: *Interleave White *MediaType PREPUNCHED1
+*UIConstraints: *MediaType PREPUNCHED1 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType PREPUNCHED1
+*UIConstraints: *MediaType PREPUNCHED1 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType LETTERHEAD
+*UIConstraints: *MediaType LETTERHEAD *Interleave White
+*UIConstraints: *Interleave Printed *MediaType LETTERHEAD
+*UIConstraints: *MediaType LETTERHEAD *Interleave Printed
+*UIConstraints: *Interleave White *MediaType BOND
+*UIConstraints: *MediaType BOND *Interleave White
+*UIConstraints: *Interleave Printed *MediaType BOND
+*UIConstraints: *MediaType BOND *Interleave Printed
+*UIConstraints: *Interleave White *MediaType HEAVY
+*UIConstraints: *MediaType HEAVY *Interleave White
+*UIConstraints: *Interleave Printed *MediaType HEAVY
+*UIConstraints: *MediaType HEAVY *Interleave Printed
+*UIConstraints: *Interleave White *MediaType MIDHEAVY
+*UIConstraints: *MediaType MIDHEAVY *Interleave White
+*UIConstraints: *Interleave Printed *MediaType MIDHEAVY
+*UIConstraints: *MediaType MIDHEAVY *Interleave Printed
+*UIConstraints: *Interleave White *MediaType EXHEAVY
+*UIConstraints: *MediaType EXHEAVY *Interleave White
+*UIConstraints: *Interleave Printed *MediaType EXHEAVY
+*UIConstraints: *MediaType EXHEAVY *Interleave Printed
+*UIConstraints: *Interleave White *MediaType EXHEAVY2
+*UIConstraints: *MediaType EXHEAVY2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType EXHEAVY2
+*UIConstraints: *MediaType EXHEAVY2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType EXHEAVY3
+*UIConstraints: *MediaType EXHEAVY3 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType EXHEAVY3
+*UIConstraints: *MediaType EXHEAVY3 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType EXHEAVY4
+*UIConstraints: *MediaType EXHEAVY4 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType EXHEAVY4
+*UIConstraints: *MediaType EXHEAVY4 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Interleave White
+*UIConstraints: *Interleave Printed *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Interleave Printed
+*UIConstraints: *Interleave White *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Interleave White
+*UIConstraints: *Interleave Printed *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Interleave Printed
+*UIConstraints: *Interleave White *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Interleave White
+*UIConstraints: *Interleave Printed *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Interleave Printed
+*UIConstraints: *Interleave White *MediaType THIN2
+*UIConstraints: *MediaType THIN2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType THIN2
+*UIConstraints: *MediaType THIN2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType THIN
+*UIConstraints: *MediaType THIN *Interleave White
+*UIConstraints: *Interleave Printed *MediaType THIN
+*UIConstraints: *MediaType THIN *Interleave Printed
+*UIConstraints: *Interleave White *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Interleave White
+*UIConstraints: *Interleave Printed *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Interleave Printed
+*UIConstraints: *Interleave White *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Interleave White
+*UIConstraints: *Interleave Printed *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Interleave Printed
+*UIConstraints: *Interleave White *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType SINGLE-SIDE-COATED1
+*UIConstraints: *MediaType SINGLE-SIDE-COATED1 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType SINGLE-SIDE-COATED2
+*UIConstraints: *MediaType SINGLE-SIDE-COATED2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType SINGLE-SIDE-COATED3
+*UIConstraints: *MediaType SINGLE-SIDE-COATED3 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType BOTH-SIDE-COATED1
+*UIConstraints: *MediaType BOTH-SIDE-COATED1 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType BOTH-SIDE-COATED2
+*UIConstraints: *MediaType BOTH-SIDE-COATED2 *Interleave Printed
+*UIConstraints: *Interleave White *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *Interleave White
+*UIConstraints: *Interleave Printed *MediaType BOTH-SIDE-COATED3
+*UIConstraints: *MediaType BOTH-SIDE-COATED3 *Interleave Printed
+*%
+*UIConstraints: *Booklet Left *MediaType PREPUNCHED1
+*UIConstraints: *MediaType PREPUNCHED1 *Booklet Left
+*UIConstraints: *Booklet Left *MediaType EXHEAVY5
+*UIConstraints: *MediaType EXHEAVY5 *Booklet Left
+*UIConstraints: *Booklet Left *MediaType TRANSPARENCY
+*UIConstraints: *MediaType TRANSPARENCY *Booklet Left
+*UIConstraints: *Booklet Left *MediaType CLEAR-FILM
+*UIConstraints: *MediaType CLEAR-FILM *Booklet Left
+*UIConstraints: *Booklet Left *MediaType LABELS
+*UIConstraints: *MediaType LABELS *Booklet Left
+*UIConstraints: *Booklet Left *MediaType TRACING
+*UIConstraints: *MediaType TRACING *Booklet Left
+*UIConstraints: *Booklet Left *MediaType ENVELOPE
+*UIConstraints: *MediaType ENVELOPE *Booklet Left
+*UIConstraints: *Booklet Left *MediaType INDEX
+*UIConstraints: *MediaType INDEX *Booklet Left
+*UIConstraints: *Booklet Left *MediaType INDEX2
+*UIConstraints: *MediaType INDEX2 *Booklet Left
+*UIConstraints: *Booklet Left *MediaType INDEX3
+*UIConstraints: *MediaType INDEX3 *Booklet Left
+*UIConstraints: *Booklet Left *MediaType INDEX4
+*UIConstraints: *MediaType INDEX4 *Booklet Left
+*%
+*%
+*UIConstraints: *BindingLocation LongEdge *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexTumble *BindingLocation LongEdge
+*UIConstraints: *BindingLocation ShortEdge *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexTumble *BindingLocation ShortEdge
+*UIConstraints: *BindingLocation LongEdge *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexNoTumble *BindingLocation LongEdge
+*UIConstraints: *BindingLocation ShortEdge *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexNoTumble *BindingLocation ShortEdge
+*%
+*UIConstraints: *Duplex DuplexTumble *Interleave White
+*UIConstraints: *Interleave White *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *Interleave White
+*UIConstraints: *Interleave White *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexTumble *Interleave Printed
+*UIConstraints: *Interleave Printed *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexNoTumble *Interleave Printed
+*UIConstraints: *Interleave Printed *Duplex DuplexNoTumble
+*%
+*UIConstraints: *Interleave White *Finishing None
+*UIConstraints: *Finishing None *Interleave White
+*UIConstraints: *Interleave Printed *Finishing None
+*UIConstraints: *Finishing None *Interleave Printed
+*UIConstraints: *Interleave White *Finishing RotGr
+*UIConstraints: *Finishing RotGr *Interleave White
+*UIConstraints: *Interleave Printed *Finishing RotGr
+*UIConstraints: *Finishing RotGr *Interleave Printed
+*UIConstraints: *Interleave White *Finishing RotCol
+*UIConstraints: *Finishing RotCol *Interleave White
+*UIConstraints: *Interleave Printed *Finishing RotCol
+*UIConstraints: *Finishing RotCol *Interleave Printed
+*UIConstraints: *Interleave White *Finishing OffGr
+*UIConstraints: *Finishing OffGr *Interleave White
+*UIConstraints: *Interleave Printed *Finishing OffGr
+*UIConstraints: *Finishing OffGr *Interleave Printed
+*UIConstraints: *Interleave White *Finishing OffCol
+*UIConstraints: *Finishing OffCol *Interleave White
+*UIConstraints: *Interleave Printed *Finishing OffCol
+*UIConstraints: *Finishing OffCol *Interleave Printed
+*%
+*UIConstraints: *Booklet Left *Finishing OffCol
+*UIConstraints: *Finishing OffCol *Booklet Left
+*UIConstraints: *Booklet Left *Finishing OffGr
+*UIConstraints: *Finishing OffGr *Booklet Left
+*UIConstraints: *Booklet Left *Finishing RotCol
+*UIConstraints: *Finishing RotCol *Booklet Left
+*UIConstraints: *Booklet Left *Finishing RotGr
+*UIConstraints: *Finishing RotGr *Booklet Left
+*%
+*UIConstraints: *Booklet Left *Punch InAnyPL
+*UIConstraints: *Punch InAnyPL *Booklet Left
+*UIConstraints: *Booklet Left *Punch InAnyPR
+*UIConstraints: *Punch InAnyPR *Booklet Left
+*UIConstraints: *Booklet Left *Punch InAnyPU
+*UIConstraints: *Punch InAnyPU *Booklet Left
+*UIConstraints: *Booklet Left *Punch InAnyPB
+*UIConstraints: *Punch InAnyPB *Booklet Left
+*%
+*UIConstraints: *Booklet Left *Duplex DuplexTumble
+*UIConstraints: *Duplex DuplexTumble *Booklet Left
+*UIConstraints: *Booklet Left *Duplex DuplexNoTumble
+*UIConstraints: *Duplex DuplexNoTumble *Booklet Left
+*%
+*UIConstraints: *Booklet Left *Interleave White
+*UIConstraints: *Interleave White *Booklet Left
+*UIConstraints: *Booklet Left *Interleave Printed
+*UIConstraints: *Interleave Printed *Booklet Left
+*%
+*%
+*%
+*%
+*%
+*OpenUI *PrintDensity/Print Density: PickOne
+*FoomaticRIPOption PrintDensity: enum CmdLine G
+*OrderDependency: 15 AnySetup *PrintDensity
+*DefaultPrintDensity: 0
+*PrintDensity -8/-8: "%% FoomaticRIPOptionSetting: PrintDensity=-8"
+*FoomaticRIPOptionSetting PrintDensity=-8: " -Q-8"
+*PrintDensity -7/-7: "%% FoomaticRIPOptionSetting: PrintDensity=-7"
+*FoomaticRIPOptionSetting PrintDensity=-7: " -Q-7"
+*PrintDensity -6/-6: "%% FoomaticRIPOptionSetting: PrintDensity=-6"
+*FoomaticRIPOptionSetting PrintDensity=-6: " -Q-6"
+*PrintDensity -5/-5: "%% FoomaticRIPOptionSetting: PrintDensity=-5"
+*FoomaticRIPOptionSetting PrintDensity=-5: " -Q-5"
+*PrintDensity -4/-4: "%% FoomaticRIPOptionSetting: PrintDensity=-4"
+*FoomaticRIPOptionSetting PrintDensity=-4: " -Q-4"
+*PrintDensity -3/-3: "%% FoomaticRIPOptionSetting: PrintDensity=-3"
+*FoomaticRIPOptionSetting PrintDensity=-3: " -Q-3"
+*PrintDensity -2/-2: "%% FoomaticRIPOptionSetting: PrintDensity=-2"
+*FoomaticRIPOptionSetting PrintDensity=-2: " -Q-2"
+*PrintDensity -1/-1: "%% FoomaticRIPOptionSetting: PrintDensity=-1"
+*FoomaticRIPOptionSetting PrintDensity=-1: " -Q-1"
+*PrintDensity 0/0: "%% FoomaticRIPOptionSetting: PrintDensity=0"
+*FoomaticRIPOptionSetting PrintDensity=0: " -Q0"
+*PrintDensity 1/1: "%% FoomaticRIPOptionSetting: PrintDensity=1"
+*FoomaticRIPOptionSetting PrintDensity=1: " -Q1"
+*PrintDensity 2/2: "%% FoomaticRIPOptionSetting: PrintDensity=2"
+*FoomaticRIPOptionSetting PrintDensity=2: " -Q2"
+*PrintDensity 3/3: "%% FoomaticRIPOptionSetting: PrintDensity=3"
+*FoomaticRIPOptionSetting PrintDensity=3: " -Q3"
+*PrintDensity 4/4: "%% FoomaticRIPOptionSetting: PrintDensity=4"
+*FoomaticRIPOptionSetting PrintDensity=4: " -Q4"
+*PrintDensity 5/5: "%% FoomaticRIPOptionSetting: PrintDensity=5"
+*FoomaticRIPOptionSetting PrintDensity=5: " -Q5"
+*PrintDensity 6/6: "%% FoomaticRIPOptionSetting: PrintDensity=6"
+*FoomaticRIPOptionSetting PrintDensity=6: " -Q6"
+*PrintDensity 7/7: "%% FoomaticRIPOptionSetting: PrintDensity=7"
+*FoomaticRIPOptionSetting PrintDensity=7: " -Q7"
+*PrintDensity 8/8: "%% FoomaticRIPOptionSetting: PrintDensity=8"
+*FoomaticRIPOptionSetting PrintDensity=8: " -Q8"
+*CloseUI: *PrintDensity
+*%
+*OpenUI *WideA4/Wide A4: PickOne
+*FoomaticRIPOption WideA4: enum CmdLine G
+*OrderDependency: 15 AnySetup *WideA4
+*DefaultWideA4: MachDef
+*WideA4 MachDef/Printer default:  ""
+*WideA4 False/Off: "%% FoomaticRIPOptionSetting: WideA4=False"
+*FoomaticRIPOptionSetting WideA4=False: " -W0"
+*WideA4 True/On: "%% FoomaticRIPOptionSetting: WideA4=True"
+*FoomaticRIPOptionSetting WideA4=True: " -W1"
+*CloseUI: *WideA4
+*%
+*OpenUI *ColourModel/Colour Mode: PickOne
+*FoomaticRIPOption ColourModel: enum Composite F
+*OrderDependency: 10 AnySetup *ColourModel
+*DefaultColourModel: Colour
+*ColourModel Colour/Colour: "%% FoomaticRIPOptionSetting: ColourModel=Colour"
+*FoomaticRIPOptionSetting ColourModel=Colour: "JCLDatamode=Colour GSCmdLine=Colour"
+*ColourModel Grayscale/Greyscale: "%% FoomaticRIPOptionSetting: ColourModel=Grayscale"
+*FoomaticRIPOptionSetting ColourModel=Grayscale: "JCLDatamode=Grayscale GSCmdLine=Grayscale"
+*CloseUI: *ColourModel
+*%
+*FoomaticRIPOption GSCmdLine: enum CmdLine F 80
+*FoomaticRIPOptionSetting GSCmdLine=FromColourModel: ""
+*FoomaticRIPOptionSetting GSCmdLine=Colour: " -sDEVICE=cljet5c"
+*FoomaticRIPOptionSetting GSCmdLine=Grayscale: " -sDEVICE=ljet4"
+*%
+*FoomaticRIPOption JCLDatamode: enum CmdLine G 80
+*FoomaticRIPOptionSetting JCLDatamode=FromColourModel: ""
+*FoomaticRIPOptionSetting JCLDatamode=Colour: " -K1"
+*FoomaticRIPOptionSetting JCLDatamode=Grayscale: " -K0"
+*%
+*OpenGroup: CanonDeviceSpec/Canon Device Specific
+*%
+*OpenUI *Destination/Destination: PickOne
+*FoomaticRIPOption Destination: enum CmdLine G
+*OrderDependency: 15 AnySetup *Destination
+*DefaultDestination: Printer
+*Destination Printer/Printer:  "%% FoomaticRIPOptionSetting: Destination=Printer"
+*FoomaticRIPOptionSetting Destination=Printer: " -A1"
+*Destination Mailbox/MailBox:  "%% FoomaticRIPOptionSetting: Destination=Mailbox"
+*FoomaticRIPOptionSetting Destination=Mailbox: " -A2"
+*CloseUI: *Destination
+*%
+*OpenUI *Mailbox/MailBox (0-99): PickOne
+*FoomaticRIPOption Mailbox: string CmdLine I
+*FoomaticRIPOptionMaxLength Mailbox: 2
+*FoomaticRIPOptionAllowedChars Mailbox: "0-9"
+*OrderDependency: 20 AnySetup *Mailbox
+*FoomaticRIPOptionPrototype Mailbox: " -BB=%s"
+*DefaultMailbox: None
+*Mailbox None/None: "%% FoomaticRIPOptionSetting: Mailbox=None"
+*FoomaticRIPOptionSetting Mailbox=None: ""
+*CloseUI: *Mailbox
+*CustomMailbox True: ""
+*ParamCustomMailbox Mailbox: 1 string 0 2
+*%
+*OpenUI *UserPassword/User Password (max. 4294967295): PickOne
+*FoomaticRIPOption UserPassword: password CmdLine I
+*FoomaticRIPOptionMaxLength UserPassword: 10
+*FoomaticRIPOptionAllowedChars UserPassword: "0-9"
+*OrderDependency: 15 AnySetup *UserPassword
+*FoomaticRIPOptionPrototype UserPassword: " -UPW=%s"
+*DefaultUserPassword: None
+*UserPassword None/None: "%% FoomaticRIPOptionSetting: UserPassword=None"
+*FoomaticRIPOptionSetting UserPassword=None: ""
+*CloseUI: *UserPassword
+*CustomUserPassword True: ""
+*ParamCustomUserPassword UserPassword: 1 passcode 0 10
+*%
+*OpenUI *UserID/User ID (max. 7 digits): PickOne
+*FoomaticRIPOption UserID: password CmdLine I
+*FoomaticRIPOptionMaxLength UserID: 7
+*FoomaticRIPOptionAllowedChars UserID: "0-9"
+*OrderDependency: 15 AnySetup *UserID
+*FoomaticRIPOptionPrototype UserID: " -UID=%s"
+*DefaultUserID: None
+*UserID None/None: "%% FoomaticRIPOptionSetting: UserID=None"
+*FoomaticRIPOptionSetting UserID=None: ""
+*CloseUI: *UserID
+*CustomUserID True: ""
+*ParamCustomUserID UserID: 1 passcode 0 7
+*%
+*OpenUI *SecuredPassword/Secured Password (max. 7 digits): PickOne
+*FoomaticRIPOption SecuredPassword: password CmdLine I
+*FoomaticRIPOptionMaxLength SecuredPassword: 7
+*FoomaticRIPOptionAllowedChars SecuredPassword: "0-9"
+*OrderDependency: 15 AnySetup *SecuredPassword
+*FoomaticRIPOptionPrototype SecuredPassword: " -SPW=%s"
+*DefaultSecuredPassword: None
+*SecuredPassword None/None: "%% FoomaticRIPOptionSetting: SecuredPassword=None"
+*FoomaticRIPOptionSetting SecuredPassword=None: ""
+*CloseUI: *SecuredPassword
+*CustomSecuredPassword True: ""
+*ParamCustomSecuredPassword SecuredPassword: 1 passcode 0 7
+*%
+*%
+*%
+*OpenUI *OptimiseRepeatJob/Optimise Repeat Job: Boolean
+*FoomaticRIPOption OptimiseRepeatJob: enum CmdLine G
+*DefaultOptimiseRepeatJob: True
+*OptimiseRepeatJob False/Off: "% FoomaticRIPOptionSetting: OptimiseRepeatJob=False"
+*FoomaticRIPOptionSetting OptimiseRepeatJob=False: " -xV0"
+*OptimiseRepeatJob True/On: "% FoomaticRIPOptionSetting: OptimiseRepeatJob=True"
+*FoomaticRIPOptionSetting OptimiseRepeatJob=True: " -xV1"
+*CloseUI: *OptimiseRepeatJob
+*%
+*OpenUI *RepeatJob/Repeat Job (0-999): PickOne
+*FoomaticRIPOption RepeatJob: enum CmdLine G
+*FoomaticRIPOptionMaxLength RepeatJob: 3
+*FoomaticRIPOptionAllowedChars RepeatJob: "0-9"
+*OrderDependency: 15 AnySetup *RepeatJob
+*FoomaticRIPOptionPrototype RepeatJob: " -xQ%s"
+*DefaultRepeatJob: None
+*RepeatJob None/Printer default: "%% FoomaticRIPOptionSetting: RepeatJob=None"
+*FoomaticRIPOptionSetting RepeatJob=None: ""
+*RepeatJob 1/1: "%% FoomaticRIPOptionSetting: RepeatJob=1"
+*FoomaticRIPOptionSetting RepeatJob=1: " -xQ1"
+*RepeatJob 2/2: "%% FoomaticRIPOptionSetting: RepeatJob=2"
+*FoomaticRIPOptionSetting RepeatJob=2: " -xQ2"
+*RepeatJob 3/3: "%% FoomaticRIPOptionSetting: RepeatJob=3"
+*FoomaticRIPOptionSetting RepeatJob=3: " -xQ3"
+*RepeatJob 4/4: "%% FoomaticRIPOptionSetting: RepeatJob=4"
+*FoomaticRIPOptionSetting RepeatJob=4: " -xQ4"
+*RepeatJob 5/5: "%% FoomaticRIPOptionSetting: RepeatJob=5"
+*FoomaticRIPOptionSetting RepeatJob=5: " -xQ5"
+*RepeatJob 6/6: "%% FoomaticRIPOptionSetting: RepeatJob=6"
+*FoomaticRIPOptionSetting RepeatJob=6: " -xQ6"
+*RepeatJob 7/7: "%% FoomaticRIPOptionSetting: RepeatJob=7"
+*FoomaticRIPOptionSetting RepeatJob=7: " -xQ7"
+*RepeatJob 8/8: "%% FoomaticRIPOptionSetting: RepeatJob=8"
+*FoomaticRIPOptionSetting RepeatJob=8: " -xQ8"
+*RepeatJob 9/9: "%% FoomaticRIPOptionSetting: RepeatJob=9"
+*FoomaticRIPOptionSetting RepeatJob=9: " -xQ9"
+*RepeatJob 10/10: "%% FoomaticRIPOptionSetting: RepeatJob=10"
+*FoomaticRIPOptionSetting RepeatJob=10: " -xQ10"
+*RepeatJob 11/11: "%% FoomaticRIPOptionSetting: RepeatJob=11"
+*FoomaticRIPOptionSetting RepeatJob=11: " -xQ11"
+*RepeatJob 12/12: "%% FoomaticRIPOptionSetting: RepeatJob=12"
+*FoomaticRIPOptionSetting RepeatJob=12: " -xQ12"
+*RepeatJob 13/13: "%% FoomaticRIPOptionSetting: RepeatJob=13"
+*FoomaticRIPOptionSetting RepeatJob=13: " -xQ13"
+*RepeatJob 14/14: "%% FoomaticRIPOptionSetting: RepeatJob=14"
+*FoomaticRIPOptionSetting RepeatJob=14: " -xQ14"
+*RepeatJob 15/15: "%% FoomaticRIPOptionSetting: RepeatJob=15"
+*FoomaticRIPOptionSetting RepeatJob=15: " -xQ15"
+*RepeatJob 16/16: "%% FoomaticRIPOptionSetting: RepeatJob=16"
+*FoomaticRIPOptionSetting RepeatJob=16: " -xQ16"
+*RepeatJob 17/17: "%% FoomaticRIPOptionSetting: RepeatJob=17"
+*FoomaticRIPOptionSetting RepeatJob=17: " -xQ17"
+*RepeatJob 18/18: "%% FoomaticRIPOptionSetting: RepeatJob=18"
+*FoomaticRIPOptionSetting RepeatJob=18: " -xQ18"
+*RepeatJob 19/19: "%% FoomaticRIPOptionSetting: RepeatJob=19"
+*FoomaticRIPOptionSetting RepeatJob=19: " -xQ19"
+*RepeatJob 20/20: "%% FoomaticRIPOptionSetting: RepeatJob=20"
+*FoomaticRIPOptionSetting RepeatJob=20: " -xQ20"
+*RepeatJob 21/21: "%% FoomaticRIPOptionSetting: RepeatJob=21"
+*FoomaticRIPOptionSetting RepeatJob=21: " -xQ21"
+*RepeatJob 22/22: "%% FoomaticRIPOptionSetting: RepeatJob=22"
+*FoomaticRIPOptionSetting RepeatJob=22: " -xQ22"
+*RepeatJob 23/23: "%% FoomaticRIPOptionSetting: RepeatJob=23"
+*FoomaticRIPOptionSetting RepeatJob=23: " -xQ23"
+*RepeatJob 24/24: "%% FoomaticRIPOptionSetting: RepeatJob=24"
+*FoomaticRIPOptionSetting RepeatJob=24: " -xQ24"
+*RepeatJob 25/25: "%% FoomaticRIPOptionSetting: RepeatJob=25"
+*FoomaticRIPOptionSetting RepeatJob=25: " -xQ25"
+*CloseUI: *RepeatJob
+*CustomRepeatJob True: ""
+*ParamCustomRepeatJob RepeatJob: 1 string 0 3
+*%
+*CloseGroup: CanonDeviceSpec
+*%
+*%
+*% ==== Device Capabilities ===============
+*LanguageLevel: "3"
+*Protocols: TBCP
+*%
+*FreeVM: "2157000"
+*%
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*%
+*TTRasterizer: Type42
+*%
+*% Optional flash rom is treated like a disk.
+*FileSystem: True
+*%
+*Throughput: "35"
+*OpenUI *Collate/Collated: Boolean
+*OrderDependency: 60.0 AnySetup *Collate
+*DefaultCollate: True
+*Collate True/On: ""
+*Collate False/Off: ""
+*CloseUI: *Collate
+*%
+*OpenGroup: PaperSource/Paper
+*%
+*OpenUI *InputSlot: PickOne
+*FoomaticRIPOption InputSlot: enum CmdLine G
+*OrderDependency: 40.0 AnySetup *InputSlot
+*DefaultInputSlot: Auto
+*InputSlot Auto/Auto: "%% FoomaticRIPOptionSetting: InputSlot=Auto"
+*FoomaticRIPOptionSetting InputSlot=Auto: ""
+*InputSlot Tray1/Drawer 1: "%% FoomaticRIPOptionSetting: InputSlot=Tray1"
+*FoomaticRIPOptionSetting InputSlot=Tray1: " -t1"
+*InputSlot Tray2/Drawer 2: "%% FoomaticRIPOptionSetting: InputSlot=Tray2"
+*FoomaticRIPOptionSetting InputSlot=Tray2: " -t4"
+*InputSlot Tray3/Drawer 3: "%% FoomaticRIPOptionSetting: InputSlot=Tray3"
+*FoomaticRIPOptionSetting InputSlot=Tray3: " -t5"
+*InputSlot Tray4/Drawer 4: "%% FoomaticRIPOptionSetting: InputSlot=Tray4"
+*FoomaticRIPOptionSetting InputSlot=Tray4: " -t20"
+*InputSlot SPD/Drawer 5: "%% FoomaticRIPOptionSetting: InputSlot=SPD"
+*FoomaticRIPOptionSetting InputSlot=SPD: " -t21"
+*InputSlot MPT/Multi Purpose Tray: "%% FoomaticRIPOptionSetting: InputSlot=MPT"
+*FoomaticRIPOptionSetting InputSlot=MPT: " -t2"
+*CloseUI: *InputSlot
+*%
+*OpenUI *MediaType/Paper Type: PickOne
+*FoomaticRIPOption MediaType: enum CmdLine H
+*OrderDependency: 50.0 AnySetup *MediaType
+*DefaultMediaType: None
+*MediaType None/Printer Default: "%% FoomaticRIPOptionSetting: MediaType=None"
+*FoomaticRIPOptionSetting MediaType=None: ""
+*MediaType PLAIN/Plain 1 (64 to 75 g/m2): "%% FoomaticRIPOptionSetting: MediaType=PLAIN"
+*FoomaticRIPOptionSetting MediaType=PLAIN: " -m0"
+*MediaType PLAIN2/Plain 2 (76 to 90 g/m2): "%% FoomaticRIPOptionSetting: MediaType=PLAIN2"
+*FoomaticRIPOptionSetting MediaType=PLAIN2: " -m107"
+*MediaType PLAIN3/Plain 3 (91 to 105 g/m2): "%% FoomaticRIPOptionSetting: MediaType=PLAIN3"
+*FoomaticRIPOptionSetting MediaType=PLAIN3: " -m113"
+*MediaType RECYCLED1/Recycled 1 (64 to 75 g/m2): "%% FoomaticRIPOptionSetting: MediaType=RECYCLED1"
+*FoomaticRIPOptionSetting MediaType=RECYCLED1: " -m170"
+*MediaType RECYCLED2/Recycled 2 (76 to 90 g/m2): "%% FoomaticRIPOptionSetting: MediaType=RECYCLED2"
+*FoomaticRIPOptionSetting MediaType=RECYCLED2: " -m171"
+*MediaType RECYCLED5/Recycled 3 (91 to 105 g/m2): "%% FoomaticRIPOptionSetting: MediaType=RECYCLED5"
+*FoomaticRIPOptionSetting MediaType=RECYCLED5: " -m174"
+*MediaType COLOR/Color (64 to 81 g/m2): "%% FoomaticRIPOptionSetting: MediaType=COLOR"
+*FoomaticRIPOptionSetting MediaType=COLOR: " -m106"
+*MediaType PREPUNCHED1/Pre-punched (64 to 81 g/m2): "%% FoomaticRIPOptionSetting: MediaType=PREPUNCHED1"
+*FoomaticRIPOptionSetting MediaType=PREPUNCHED1: " -m103"
+*MediaType LETTERHEAD/Letterhead (106 to 163 g/m2): "%% FoomaticRIPOptionSetting: MediaType=LETTERHEAD"
+*FoomaticRIPOptionSetting MediaType=LETTERHEAD: " -m131"
+*MediaType BOND/Bond (82 to 99 g/m2): "%% FoomaticRIPOptionSetting: MediaType=BOND"
+*FoomaticRIPOptionSetting MediaType=BOND: " -m1"
+*MediaType HEAVY/Heavy 1 (106 to 128 g/m2): "%% FoomaticRIPOptionSetting: MediaType=HEAVY"
+*FoomaticRIPOptionSetting MediaType=HEAVY: " -m108"
+*MediaType MIDHEAVY/Heavy 2 (129 to 150 g/m2): "%% FoomaticRIPOptionSetting: MediaType=MIDHEAVY"
+*FoomaticRIPOptionSetting MediaType=MIDHEAVY: " -m110"
+*MediaType EXHEAVY/Heavy 3 (151 to 163 g/m2): "%% FoomaticRIPOptionSetting: MediaType=EXHEAVY"
+*FoomaticRIPOptionSetting MediaType=EXHEAVY: " -m109"
+*MediaType EXHEAVY2/Heavy 4 (164 to 180 g/m2): "%% FoomaticRIPOptionSetting: MediaType=EXHEAVY2"
+*FoomaticRIPOptionSetting MediaType=EXHEAVY2: " -m191"
+*MediaType EXHEAVY3/Heavy 5 (181 to 220 g/m2): "%% FoomaticRIPOptionSetting: MediaType=EXHEAVY3"
+*FoomaticRIPOptionSetting MediaType=EXHEAVY3: " -m192"
+*MediaType EXHEAVY4/Heavy 6 (221 to 256 g/m2): "%% FoomaticRIPOptionSetting: MediaType=EXHEAVY4"
+*FoomaticRIPOptionSetting MediaType=EXHEAVY4: " -m193"
+*MediaType EXHEAVY5/Heavy 7 (257 to 300 g/m2): "%% FoomaticRIPOptionSetting: MediaType=EXHEAVY5"
+*FoomaticRIPOptionSetting MediaType=EXHEAVY5: " -m194"
+*MediaType TRANSPARENCY/Transparency (121 to 220 g/m2): "%% FoomaticRIPOptionSetting: MediaType=TRANSPARENCY"
+*FoomaticRIPOptionSetting MediaType=TRANSPARENCY: " -m4"
+*MediaType CLEAR-FILM/Clear Film (121 to 220 g/m2): "%% FoomaticRIPOptionSetting: MediaType=CLEAR-FILM"
+*FoomaticRIPOptionSetting MediaType=CLEAR-FILM: " -m214"
+*MediaType LABELS/Labels (118 to 185 g/m2): "%% FoomaticRIPOptionSetting: MediaType=LABELS"
+*FoomaticRIPOptionSetting MediaType=LABELS: " -m104"
+*MediaType TRACING/Tracing (64 to 81 g/m2): "%% FoomaticRIPOptionSetting: MediaType=TRACING"
+*FoomaticRIPOptionSetting MediaType=TRACING: " -m140"
+*MediaType THIN2/Thin 2 (52 to 59 g/m2): "%% FoomaticRIPOptionSetting: MediaType=THIN2"
+*FoomaticRIPOptionSetting MediaType=THIN2: " -m215"
+*MediaType THIN/Thin 1 (60 to 63 g/m2): "%% FoomaticRIPOptionSetting: MediaType=THIN"
+*FoomaticRIPOptionSetting MediaType=THIN: " -m111"
+*MediaType ENVELOPE/Envelope (75 to 105 g/m2): "%% FoomaticRIPOptionSetting: MediaType=ENVELOPE"
+*FoomaticRIPOptionSetting MediaType=ENVELOPE: " -m101"
+*MediaType INDEX/Tab 1 (91 to 105 g/m2): "%% FoomaticRIPOptionSetting: MediaType=INDEX"
+*FoomaticRIPOptionSetting MediaType=INDEX: " -m216"
+*MediaType INDEX2/Tab 2 (106 to 128 g/m2): "%% FoomaticRIPOptionSetting: MediaType=INDEX2"
+*FoomaticRIPOptionSetting MediaType=INDEX2: " -m217"
+*MediaType INDEX3/Tab 3 (129 to 150 g/m2): "%% FoomaticRIPOptionSetting: MediaType=INDEX3"
+*FoomaticRIPOptionSetting MediaType=INDEX3: " -m218"
+*MediaType INDEX4/Tab 4 (151 to 220 g/m2): "%% FoomaticRIPOptionSetting: MediaType=INDEX4"
+*FoomaticRIPOptionSetting MediaType=INDEX4: " -m219"
+*MediaType SINGLE-SIDE-COATED1/1-sided Coated 1 (106 to 163 g/m2): "%% FoomaticRIPOptionSetting: MediaType=SINGLE-SIDE-COATED1"
+*FoomaticRIPOptionSetting MediaType=SINGLE-SIDE-COATED1: " -m141"
+*MediaType SINGLE-SIDE-COATED2/1-sided Coated 2 (164 to 220 g/m2): "%% FoomaticRIPOptionSetting: MediaType=SINGLE-SIDE-COATED2"
+*FoomaticRIPOptionSetting MediaType=SINGLE-SIDE-COATED2: " -m142"
+*MediaType SINGLE-SIDE-COATED3/1-sided Coated 3 (221 to 256 g/m2): "%% FoomaticRIPOptionSetting: MediaType=SINGLE-SIDE-COATED3"
+*FoomaticRIPOptionSetting MediaType=SINGLE-SIDE-COATED3: " -m143"
+*MediaType BOTH-SIDE-COATED1/2-sided Coated 1 (106 to 163 g/m2): "%% FoomaticRIPOptionSetting: MediaType=BOTH-SIDE-COATED1"
+*FoomaticRIPOptionSetting MediaType=BOTH-SIDE-COATED1: " -m161"
+*MediaType BOTH-SIDE-COATED2/2-sided Coated 2 (164 to 220 g/m2): "%% FoomaticRIPOptionSetting: MediaType=BOTH-SIDE-COATED2"
+*FoomaticRIPOptionSetting MediaType=BOTH-SIDE-COATED2: " -m162"
+*MediaType BOTH-SIDE-COATED3/2-sided Coated 3 (221 to 256 g/m2): "%% FoomaticRIPOptionSetting: MediaType=BOTH-SIDE-COATED3"
+*FoomaticRIPOptionSetting MediaType=BOTH-SIDE-COATED3: " -m163"
+*CloseUI: *MediaType
+*%
+*CloseGroup: PaperSource
+*%
+*RequiresPageRegion All: True
+*%
+*OpenGroup: Finishing/Finishing
+*%
+*OpenUI *Duplex/Duplex: PickOne
+*FoomaticRIPOption Duplex: enum CmdLine G
+*OrderDependency: 50.0 AnySetup *Duplex
+*DefaultDuplex: DuplexNoTumble
+*Duplex None/Off: "%% FoomaticRIPOptionSetting: Duplex=None"
+*FoomaticRIPOptionSetting Duplex=None: " -d0"
+*Duplex DuplexNoTumble/Long edge: "%% FoomaticRIPOptionSetting: Duplex=DuplexNoTumble"
+*FoomaticRIPOptionSetting Duplex=DuplexNoTumble: " -d1"
+*Duplex DuplexTumble/Short edge: "%% FoomaticRIPOptionSetting: Duplex=DuplexTumble"
+*FoomaticRIPOptionSetting Duplex=DuplexTumble: " -d2"
+*CloseUI: *Duplex
+*%
+*OpenUI *Booklet/Booklet Printing: PickOne
+*FoomaticRIPOption Booklet: enum CmdLine H
+*OrderDependency: 5.0 AnySetup *Booklet
+*DefaultBooklet: Default
+*Booklet Default/Printer Default: "%% FoomaticRIPOptionSetting: Booklet=Default"
+*FoomaticRIPOptionSetting Booklet=Default: " -a0"
+*Booklet Left/Left Binding (Portrait)/Top Binding (Landscape): "%% FoomaticRIPOptionSetting: Booklet=Left"
+*FoomaticRIPOptionSetting Booklet=Left: " -a1"
+*CloseUI: *Booklet
+*%
+*OpenUI *Fold/Fold: PickOne
+*FoomaticRIPOption Fold: enum CmdLine I
+*OrderDependency: 50.0 AnySetup *Fold
+*DefaultFold: Default
+*Fold Default/Printer Default: "%% FoomaticRIPOptionSetting: Fold=Default"
+*FoomaticRIPOptionSetting Fold=Default: ""
+*Fold Off/Off: "%% FoomaticRIPOptionSetting: Fold=Off"
+*FoomaticRIPOptionSetting Fold=Off: " -z0"
+*CloseUI: *Fold
+*%
+*OpenUI *BindingLocation/Binding Location: PickOne
+*FoomaticRIPOption BindingLocation: enum CmdLine H
+*OrderDependency: 50.0 AnySetup *BindingLocation
+*DefaultBindingLocation: None
+*BindingLocation None/Printer Default: "%% FoomaticRIPOptionSetting: BindingLocation=None"
+*FoomaticRIPOptionSetting BindingLocation=None: ""
+*BindingLocation LongEdge/Long Edge: "%% FoomaticRIPOptionSetting: BindingLocation=LongEdge"
+*FoomaticRIPOptionSetting BindingLocation=LongEdge: " -l0"
+*BindingLocation ShortEdge/Short Edge: "%% FoomaticRIPOptionSetting: BindingLocation=ShortEdge"
+*FoomaticRIPOptionSetting BindingLocation=ShortEdge: " -l1"
+*CloseUI: *BindingLocation
+*%
+*OpenUI *Finishing/Finishing: PickOne
+*FoomaticRIPOption Finishing: enum CmdLine G
+*OrderDependency: 50.0 AnySetup *Finishing
+*DefaultFinishing: Col
+*Finishing Col/Collate: "%% FoomaticRIPOptionSetting: Finishing=Col"
+*FoomaticRIPOptionSetting Finishing=Col: " -s1"
+*Finishing None/Group: "%% FoomaticRIPOptionSetting: Finishing=None"
+*FoomaticRIPOptionSetting Finishing=None: " -s0"
+*Finishing RotCol/Rotate-collate: "%% FoomaticRIPOptionSetting: Finishing=RotCol"
+*FoomaticRIPOptionSetting Finishing=RotCol: " -s6"
+*Finishing RotGr/Rotate-group: "%% FoomaticRIPOptionSetting: Finishing=RotGr"
+*FoomaticRIPOptionSetting Finishing=RotGr: " -s4"
+*Finishing OffCol/Offset-collate: "%% FoomaticRIPOptionSetting: Finishing=OffCol"
+*FoomaticRIPOptionSetting Finishing=OffCol: " -s1"
+*Finishing OffGr/Offset-group: "%% FoomaticRIPOptionSetting: Finishing=OffGr"
+*FoomaticRIPOptionSetting Finishing=OffGr: " -s3"
+*CloseUI: *Finishing
+*%
+*OpenUI *Interleave/Transparency Cover Sheets (Insert.): PickOne
+*FoomaticRIPOption Interleave: enum CmdLine I
+*OrderDependency: 60.0 AnySetup *Interleave
+*DefaultInterleave: None
+*Interleave None/Off: "%% FoomaticRIPOptionSetting: Interleave=None"
+*FoomaticRIPOptionSetting Interleave=None: " -i0"
+*Interleave White/Insert Blank Sheets: "%% FoomaticRIPOptionSetting: Interleave=White"
+*FoomaticRIPOptionSetting Interleave=White: " -i2"
+*Interleave Printed/Insert Printed Sheets: "%% FoomaticRIPOptionSetting: Interleave=Printed"
+*FoomaticRIPOptionSetting Interleave=Printed: " -i1"
+*CloseUI: *Interleave
+*%
+*OpenUI *Punch/Hole Punch: PickOne
+*FoomaticRIPOption Punch: enum CmdLine H
+*OrderDependency: 50.0 AnySetup *Punch
+*DefaultPunch: None
+*Punch None/Off: "%% FoomaticRIPOptionSetting: Punch=None"
+*FoomaticRIPOptionSetting Punch=None: " -G0"
+*Punch InAnyPL/Punch (Port L/Land U): "%% FoomaticRIPOptionSetting: Punch=InAnyPL"
+*FoomaticRIPOptionSetting Punch=InAnyPL: " -G1"
+*Punch InAnyPR/Punch (Port R/Land B): "%% FoomaticRIPOptionSetting: Punch=InAnyPR"
+*FoomaticRIPOptionSetting Punch=InAnyPR: " -G2"
+*Punch InAnyPU/Punch (Port U/Land R): "%% FoomaticRIPOptionSetting: Punch=InAnyPU"
+*FoomaticRIPOptionSetting Punch=InAnyPU: " -G3"
+*Punch InAnyPB/Punch (Port B/Land L): "%% FoomaticRIPOptionSetting: Punch=InAnyPB"
+*FoomaticRIPOptionSetting Punch=InAnyPB: " -G4"
+*CloseUI: *Punch
+*%
+*OpenUI *CNOutput/Paper Output: PickOne
+*FoomaticRIPOption CNOutput: enum CmdLine H
+*OrderDependency: 50.0 AnySetup *CNOutput
+*DefaultCNOutput: Auto
+*CNOutput Auto/Auto: "%% FoomaticRIPOptionSetting: CNOutput=Auto"
+*FoomaticRIPOptionSetting CNOutput=Auto: ""
+*CNOutput TrayA/Tray A: "%% FoomaticRIPOptionSetting: CNOutput=TrayA"
+*FoomaticRIPOptionSetting CNOutput=TrayA: " -O31"
+*CNOutput TrayB/Tray B: "%% FoomaticRIPOptionSetting: CNOutput=TrayB"
+*FoomaticRIPOptionSetting CNOutput=TrayB: " -O32"
+*CNOutput TrayC/Tray C: "%% FoomaticRIPOptionSetting: CNOutput=TrayC"
+*FoomaticRIPOptionSetting CNOutput=TrayC: " -O1"
+*CNOutput TrayD/Tray D: "%% FoomaticRIPOptionSetting: CNOutput=TrayD"
+*FoomaticRIPOptionSetting CNOutput=TrayD: " -O1"
+*CloseUI: *CNOutput
+*%
+*CloseGroup: Finishing
+*%
+*OpenGroup: DetailedSettings/Quality
+*%
+*OpenUI *CN_DPI/Resolution: PickOne
+*OrderDependency: 60.0 AnySetup *CN_DPI
+*DefaultCN_DPI: 600dpi
+*CN_DPI 1200dpi/1200 dpi: "%% FoomaticRIPOptionSetting: Resolution=1200dpi"
+*FoomaticRIPOptionSetting Resolution=1200dpi: "JCLResolution=1200dpi GSResolution=1200dpi"
+*CN_DPI 600dpi/600 dpi: "%% FoomaticRIPOptionSetting: Resolution=600dpi"
+*FoomaticRIPOptionSetting Resolution=600dpi: "JCLResolution=600dpi GSResolution=600dpi"
+*CloseUI: *CN_DPI
+*%
+*FoomaticRIPOption GSResolution: enum CmdLine A 15
+*FoomaticRIPOptionSetting GSResolution=FromResolution: ""
+*FoomaticRIPOptionSetting GSResolution=300dpi: " -r300x300"
+*FoomaticRIPOptionSetting GSResolution=600dpi: " -r600x600"
+*FoomaticRIPOptionSetting GSResolution=1200dpi: " -r1200x1200"
+*%
+*FoomaticRIPOption JCLResolution: enum CmdLine H 15
+*FoomaticRIPOptionSetting JCLResolution=FromResolution: ""
+*FoomaticRIPOptionSetting JCLResolution=300dpi: " -R300"
+*FoomaticRIPOptionSetting JCLResolution=600dpi: " -R600"
+*FoomaticRIPOptionSetting JCLResolution=1200dpi: " -R1200"
+*%
+*%
+*OpenUI *TonerSave/Toner Save: PickOne
+*FoomaticRIPOption TonerSave: enum CmdLine I
+*OrderDependency: 50.0 AnySetup *TonerSave
+*DefaultTonerSave: Default
+*TonerSave Default/Printer Default: "%% FoomaticRIPOptionSetting: TonerSave=Default"
+*FoomaticRIPOptionSetting TonerSave=Default: ""
+*TonerSave Off/Off: "%% FoomaticRIPOptionSetting: TonerSave=Off"
+*FoomaticRIPOptionSetting TonerSave=Off: " -T0"
+*TonerSave On/On: "%% FoomaticRIPOptionSetting: TonerSave=On"
+*FoomaticRIPOptionSetting TonerSave=On: " -T1"
+*CloseUI: *TonerSave
+*%
+*OpenUI *AdvancedSmooth/Advanced Smoothing: PickOne
+*FoomaticRIPOption AdvancedSmooth: enum CmdLine I
+*OrderDependency: 50.0 AnySetup *AdvancedSmooth
+*DefaultAdvancedSmooth: Default
+*AdvancedSmooth Default/Printer Default: "%% FoomaticRIPOptionSetting: AdvancedSmooth=Default"
+*FoomaticRIPOptionSetting AdvancedSmooth=Default: ""
+*AdvancedSmooth Off/Off: "%% FoomaticRIPOptionSetting: AdvancedSmooth=Off"
+*FoomaticRIPOptionSetting AdvancedSmooth=Off: " -g0"
+*AdvancedSmooth Smooth1/Smooth 1: "%% FoomaticRIPOptionSetting: AdvancedSmooth=Smooth1"
+*FoomaticRIPOptionSetting AdvancedSmooth=Smooth1: " -g1"
+*AdvancedSmooth Smooth2/Smooth 2: "%% FoomaticRIPOptionSetting: AdvancedSmooth=Smooth2"
+*FoomaticRIPOptionSetting AdvancedSmooth=Smooth2: " -g2"
+*CloseUI: *AdvancedSmooth
+*%
+*OpenUI *HalfTone/Halftones: PickOne
+*FoomaticRIPOption HalfTone: enum CmdLine I
+*OrderDependency: 50.0 AnySetup *HalfTone
+*DefaultHalfTone: Default
+*HalfTone Default/Printer Default: "%% FoomaticRIPOptionSetting: HalfTone=Default"
+*FoomaticRIPOptionSetting HalfTone=Default: ""
+*HalfTone Resolution/Resolution: "%% FoomaticRIPOptionSetting: HalfTone=Resolution"
+*FoomaticRIPOptionSetting HalfTone=Resolution: " -H31"
+*HalfTone Gradation/Gradation: "%% FoomaticRIPOptionSetting: HalfTone=Gradation"
+*FoomaticRIPOptionSetting HalfTone=Gradation: " -H33"
+*HalfTone ErrDiffusion/Error Diffusion: "%% FoomaticRIPOptionSetting: HalfTone=ErrDiffusion"
+*FoomaticRIPOptionSetting HalfTone=ErrDiffusion: " -H32"
+*HalfTone Pat1/Pattern 1: "%% FoomaticRIPOptionSetting: HalfTone=Pat1"
+*FoomaticRIPOptionSetting HalfTone=Pat1: " -H1"
+*HalfTone Pat2/Pattern 2: "%% FoomaticRIPOptionSetting: HalfTone=Pat2"
+*FoomaticRIPOptionSetting HalfTone=Pat2: " -H2"
+*HalfTone Pat3/Pattern 3: "%% FoomaticRIPOptionSetting: HalfTone=Pat3"
+*FoomaticRIPOptionSetting HalfTone=Pat3: " -H3"
+*HalfTone Pat4/Pattern 4: "%% FoomaticRIPOptionSetting: HalfTone=Pat4"
+*FoomaticRIPOptionSetting HalfTone=Pat4: " -H4"
+*HalfTone Pat5/Pattern 5: "%% FoomaticRIPOptionSetting: HalfTone=Pat5"
+*FoomaticRIPOptionSetting HalfTone=Pat5: " -H5"
+*HalfTone Pat6/Pattern 6: "%% FoomaticRIPOptionSetting: HalfTone=Pat6"
+*FoomaticRIPOptionSetting HalfTone=Pat6: " -H6"
+*HalfTone Pat7/Pattern 7: "%% FoomaticRIPOptionSetting: HalfTone=Pat7"
+*FoomaticRIPOptionSetting HalfTone=Pat7: " -H7"
+*CloseUI: *HalfTone
+*%
+*CloseGroup: DetailedSettings
+*%
+*OpenGroup: Color/Color
+*%
+*CloseGroup: Color
+*%
+*% Halftone Information ===============
+*ScreenFreq: "71.0"
+*ScreenAngle: "45.0"
+*%
+*DefaultScreenProc: Dot
+*%
+*DefaultTransfer: Null
+*Transfer Null: "{ }"
+*Transfer Null.Inverse: "{1 exch sub}"
+*%
+*% Paper Handling =====================
+*%
+*MaxMediaWidth: "908"
+*MaxMediaHeight: "3402"
+*CenterRegistered: True
+*HWMargins: 11.3386 11.3386 11.3386 11.3386
+*LeadingEdge Short: ""
+*DefaultLeadingEdge: Short
+*VariablePaperSize: True
+*%
+*LandscapeOrientation: Plus90
+*%
+*OpenUI *PageSize: PickOne
+*FoomaticRIPOption PageSize: enum CmdLine C
+*OrderDependency: 50.0 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize Letter/US Letter: "%% FoomaticRIPOptionSetting: PageSize=Letter"
+*FoomaticRIPOptionSetting  PageSize=Letter: " -sPAPERSIZE=letter"
+*PageSize Legal/US Legal: "%% FoomaticRIPOptionSetting: PageSize=Legal"
+*FoomaticRIPOptionSetting  PageSize=Legal: " -sPAPERSIZE=legal"
+*PageSize Tabloid/11x17: "%% FoomaticRIPOptionSetting: PageSize=11x17"
+*FoomaticRIPOptionSetting  PageSize=11x17: " -sPAPERSIZE=11x17"
+*PageSize Executive/Executive: "%% FoomaticRIPOptionSetting: PageSize=Executive"
+*FoomaticRIPOptionSetting  PageSize=Executive: " -sPAPERSIZE=note"
+*PageSize Statement/Statement: "%% FoomaticRIPOptionSetting: PageSize=Statement"
+*FoomaticRIPOptionSetting  PageSize=Statement: " -sPAPERSIZE=halfletter"
+*PageSize A3/A3: "%% FoomaticRIPOptionSetting: PageSize=A3"
+*FoomaticRIPOptionSetting  PageSize=A3: " -sPAPERSIZE=a3"
+*PageSize A4/A4: "%% FoomaticRIPOptionSetting: PageSize=A4"
+*FoomaticRIPOptionSetting  PageSize=A4: " -sPAPERSIZE=a4"
+*PageSize A5/A5: "%% FoomaticRIPOptionSetting: PageSize=A5"
+*FoomaticRIPOptionSetting  PageSize=A5: " -sPAPERSIZE=a5"
+*PageSize B5/JB5: "%% FoomaticRIPOptionSetting: PageSize=B5"
+*FoomaticRIPOptionSetting  PageSize=B5: " -sPAPERSIZE=b5"
+*PageSize B4/JB4: "%% FoomaticRIPOptionSetting: PageSize=B4"
+*FoomaticRIPOptionSetting  PageSize=B4: " -sPAPERSIZE=b4"
+*PageSize Monarch/Envelope Monarch: "%% FoomaticRIPOptionSetting: PageSize=MONARCH"
+*FoomaticRIPOptionSetting  PageSize=MONARCH: " -dDEVICEWIDTHPOINTS=279 -dDEVICEHEIGHTPOINTS=540 "
+*PageSize Com10/Envelope No. 10 (COM10): "%% FoomaticRIPOptionSetting: PageSize=COM10"
+*FoomaticRIPOptionSetting  PageSize=COM10: " -dDEVICEWIDTHPOINTS=297 -dDEVICEHEIGHTPOINTS=684 "
+*PageSize DL/Envelope DL: "%% FoomaticRIPOptionSetting: PageSize=DL"
+*FoomaticRIPOptionSetting  PageSize=DL: " -dDEVICEWIDTHPOINTS=312 -dDEVICEHEIGHTPOINTS=624 "
+*PageSize C5/Envelope C5: "%% FoomaticRIPOptionSetting: PageSize=ISO-C5"
+*FoomaticRIPOptionSetting  PageSize=ISO-C5: " -dDEVICEWIDTHPOINTS=459 -dDEVICEHEIGHTPOINTS=649 "
+*PageSize SRA3/SRA3: "%% FoomaticRIPOptionSetting: PageSize=A3"
+*FoomaticRIPOptionSetting  PageSize=A3: " -sPAPERSIZE=a3"
+*PageSize SRA3_MAX/SRA3 (Print Area-Large): "%% FoomaticRIPOptionSetting: PageSize=A3"
+*FoomaticRIPOptionSetting  PageSize=A3: " -sPAPERSIZE=a3"
+*PageSize 12x18/12x18: "%% FoomaticRIPOptionSetting: PageSize=12X18"
+*FoomaticRIPOptionSetting  PageSize=12X18: " -dDEVICEWIDTHPOINTS=864 -dDEVICEHEIGHTPOINTS=1296 "
+*PageSize 12x18_MAX/12x18 (Print Area-Large): "%% FoomaticRIPOptionSetting: PageSize=12X18"
+*FoomaticRIPOptionSetting  PageSize=12X18: " -dDEVICEWIDTHPOINTS=864 -dDEVICEHEIGHTPOINTS=1296 "
+*CloseUI: *PageSize
+*%
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 50.0 AnySetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion Letter/US Letter: "%% FoomaticRIPOptionSetting: PageSize=Letter"
+*PageRegion Legal/US Legal: "%% FoomaticRIPOptionSetting: PageSize=Legal"
+*PageRegion Tabloid/11x17: "%% FoomaticRIPOptionSetting: PageSize=11x17"
+*PageRegion Executive/Executive: "%% FoomaticRIPOptionSetting: PageSize=Executive"
+*PageRegion Statement/Statement: "%% FoomaticRIPOptionSetting: PageSize=Statement"
+*PageRegion A3/A3: "%% FoomaticRIPOptionSetting: PageSize=A3"
+*PageRegion A4/A4: "%% FoomaticRIPOptionSetting: PageSize=A4"
+*PageRegion A5/A5: "%% FoomaticRIPOptionSetting: PageSize=A5"
+*PageRegion B5/JB5: "%% FoomaticRIPOptionSetting: PageSize=B5"
+*PageRegion B4/JB4: "%% FoomaticRIPOptionSetting: PageSize=B4"
+*PageRegion Monarch/Envelope Monarch: "%% FoomaticRIPOptionSetting: PageSize=MONARCH"
+*PageRegion Com10/Envelope No. 10 (COM10): "%% FoomaticRIPOptionSetting: PageSize=COM10"
+*PageRegion DL/Envelope DL: "%% FoomaticRIPOptionSetting: PageSize=DL"
+*PageRegion C5/Envelope C5: "%% FoomaticRIPOptionSetting: PageSize=ISO-C5"
+*PageRegion SRA3/SRA3: "%% FoomaticRIPOptionSetting: PageSize=A3"
+*PageRegion SRA3_MAX/SRA3 (Print Area-Large): "%% FoomaticRIPOptionSetting: PageSize=A3"
+*PageRegion 12x18/12x18: "%% FoomaticRIPOptionSetting: PageSize=12X18"
+*PageRegion 12x18_MAX/12x18 (Print Area-Large): "%% FoomaticRIPOptionSetting: PageSize=12X18"
+*CloseUI: *PageRegion
+*%
+*DefaultImageableArea: A4
+*ImageableArea Letter/US Letter: "11.3386 11.3386 600.6614 780.6614"
+*ImageableArea Legal/US Legal: "11.3386 11.3386 600.6614 996.6614"
+*ImageableArea Tabloid/11x17: "11.3386 11.3386 780.6614 1212.6614"
+*ImageableArea Executive/Executive: "11.3386 11.3386 510.6614 744.6614"
+*ImageableArea Statement/Statement: "11.3386 11.3386 384.6614 600.6614"
+*ImageableArea A3/A3: "11.3386 11.3386 830.6614 1179.6614"
+*ImageableArea A4/A4: "11.3386 11.3386 583.6614 830.6614"
+*ImageableArea A5/A5: "11.3386 11.3386 408.6614 583.6614"
+*ImageableArea B5/JB5: "11.3386 11.3386 504.6614 717.6614"
+*ImageableArea B4/JB4: "11.3386 11.3386 717.6614 1020.6614"
+*ImageableArea Monarch/Envelope Monarch: "11.3386 11.3386 267.6614 528.6614"
+*ImageableArea Com10/Envelope No. 10 (COM10): "11.3386 11.3386 285.6614 672.6614"
+*ImageableArea DL/Envelope DL: "11.3386 11.3386 300.6614 612.6614"
+*ImageableArea C5/Envelope C5: "11.3386 11.3386 447.6614 637.6614"
+*ImageableArea SRA3/SRA3: "11.3386 11.3386 895.6614 1264.6614"
+*ImageableArea SRA3_MAX/SRA3 (Print Area-Large): "0 0 907 1276"
+*ImageableArea 12x18/12x18: "11.3386 11.3386 852.6614 1284.6614"
+*ImageableArea 12x18_MAX/12x18 (Print Area-Large): "0 0 864 1296"
+*%
+*DefaultPaperDimension: A4
+*PaperDimension Letter/US Letter: "612 792"
+*PaperDimension Legal/US Legal: "612 1008"
+*PaperDimension Tabloid/11x17: "792 1224"
+*PaperDimension Executive/Executive: "522 756"
+*PaperDimension Statement/Statement: "396 612"
+*PaperDimension A3/A3: "842 1191"
+*PaperDimension A4/A4: "595 842"
+*PaperDimension A5/A5: "420 595"
+*PaperDimension B5/JB5: "516 729"
+*PaperDimension B4/JB4: "729 1032"
+*PaperDimension Monarch/Envelope Monarch: "279 540"
+*PaperDimension Com10/Envelope No. 10 (COM10): "297 684"
+*PaperDimension DL/Envelope DL: "312 624"
+*PaperDimension C5/Envelope C5: "459 649"
+*PaperDimension SRA3/SRA3: "907 1276"
+*PaperDimension SRA3_MAX/SRA3 (Print Area-Large): "907 1276"
+*PaperDimension 12x18/12x18: "864 1296"
+*PaperDimension 12x18_MAX/12x18 (Print Area-Large): "864 1296"
+*%
+*% Font Information ===================
+*%
+*FCacheSize None: 917600
+*%
+*DefaultFont: Courier
+*%
+*% Printer Messages (verbatim from printer):
+*%
+*% Status (format: %%[ status: <one of these> ] %%)
+*%
+*% Input Sources (format: %%[ status: <stat>; source: <one of these> ]%% )
+*%
+*%DeviceAdjustMatrix: "[1 0 0 1 0 0]"
+*%
+*% Color Separation Information =====================
+*%
+*DefaultColorSep: ProcessBlack.106lpi.600dpi/106 lpi / 600x600 dpi
+*%
+*%  For 106 lpi / 600 x 600 dpi  ===============================
+*%
+*% The byte count of this file should be exactly 88009 or greater
+*% depending on the filesystem it resides in.
+*% end of PPD file for Canon iR-ADV C5535/5540 Printer
