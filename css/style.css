@@ -26,11 +26,11 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i';
 
-/*
-font-family: 'Playfair Display', serif;
-font-family: 'Lato', sans-serif;
-font-family: 'Open Sans', sans-serif;
-*/
+
+font-family: 'Montserrat', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat', sans-serif;
+
 
 
 /* typography
@@ -639,7 +639,7 @@ a.active {
 }
 
 .modal-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', ;
     font-size: 40px;
     line-height: 50px;
 }
@@ -792,7 +792,7 @@ fieldset {
 
 @media (max-width: 500px) {
     h1 {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Montserrat', ;
         font-size: 50px;
         line-height: 50px;
     }
