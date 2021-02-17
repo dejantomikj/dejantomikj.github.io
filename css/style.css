@@ -36,24 +36,24 @@ font-family: 'Open Sans', sans-serif;
 /* typography
 ==================================================*/
 
-.noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome and Opera */
-  }
+/* .noselect {
+ /*    -webkit-touch-callout: none; /* iOS Safari */
+  /*     -webkit-user-select: none; /* Safari */
+   /*     -khtml-user-select: none; /* Konqueror HTML */
+     /*     -moz-user-select: none; /* Firefox */
+         /*  -ms-user-select: none; /* Internet Explorer/Edge */
+              /* user-select: none; Non-prefixed version, currently
+                                    supported by Chrome and Opera 
+  }*/
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', ;
     font-size: 80px;
     line-height: 70px;
 }
 
-h4 {
-    font-family: 'Lato', sans-serif;
+h3 {
+    font-family: 'Montserrat', ;
     text-transform: capitalize;
     letter-spacing: 2px;
     position: relative;
@@ -62,7 +62,7 @@ h4 {
     font-weight: 700;
 }
 
-h4:before {
+h3:before {
     position: absolute;
     width: 30px;
     left: -40px;
