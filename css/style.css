@@ -52,7 +52,7 @@ h1 {
     line-height: 70px;
 }
 
-/* h4 {
+h4 {
     font-family: 'Montserrat', ;
     text-transform: capitalize;
     letter-spacing: 2px;
@@ -71,7 +71,7 @@ h4:before {
     height: 2px;
     background: #425BB5;
     top: 9px;
-} */
+}
 
 
 /* General
