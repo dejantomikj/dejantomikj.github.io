@@ -787,6 +787,10 @@ fieldset {
         list-style: none;
         margin: 10px 0;
     }
+    .portfolio .categories-grid .categories ul li a.active {
+        
+        padding: 12px 13px;
+    }
 }
 
 @media (max-width: 420px) {
