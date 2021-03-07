@@ -38,7 +38,6 @@ h4 {
     letter-spacing: 2px;
     position: relative;
     color: #425BB5;
-    margin-left: 40px;
     font-weight: 700;
 }
 
@@ -775,6 +774,7 @@ fieldset {
         font-family: 'Montserrat', ;
         font-size: 50px;
         line-height: 50px;
+        max-width: 219px;
     }
     #home,
     .disply-table {
