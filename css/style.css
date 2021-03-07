@@ -774,7 +774,7 @@ fieldset {
         font-family: 'Montserrat', ;
         font-size: 50px;
         line-height: 50px;
-        max-width: 219px;
+        max-width: 219px!important;
     }
     #home,
     .disply-table {
