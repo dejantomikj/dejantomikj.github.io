@@ -1,24 +1,4 @@
-/*
-* Resume template
-* Created by : Ahmed Essa
-* website : www.ahmedessa.net
-*/
 
-
-/* Table of Content
-==================================================
-	- Google fonts & font family -
-	- typography -
-	- General -
-    - Preloader -
-	- Header -
-    - home section -
-    - About section -
-    - experience section -
-    - projects section -
-    - Contact section -
-    - Responsive media queries -
-*/
 
 
 /* Google fonts & font family
@@ -48,7 +28,7 @@ font-family: 'Montserrat', sans-serif;
 
 h1 {
     font-family: 'Montserrat', ;
-    font-size: 80px;
+    font-size: 80px !important;
     line-height: 70px;
 }
 
@@ -62,7 +42,7 @@ h4 {
     font-weight: 700;
 }
 
-h4:before {
+/* h4:before {
     position: absolute;
     width: 30px;
     left: -40px;
@@ -71,7 +51,7 @@ h4:before {
     height: 2px;
     background: #425BB5;
     top: 9px;
-}
+} */
 
 
 /* General
